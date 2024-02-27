@@ -120,6 +120,7 @@
       $(`#${lightboxId}`).modal("toggle");
     },
     prevImage() {
+      console.log("test");
       let activeImage = null;
       $("img.gallery-item").each(function() {
         if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
@@ -153,12 +154,12 @@
           index = i ;
         }
       });
-      next =
-        imagesCollection[index] ||
-        imagesCollection[imagesCollection.length - 1];
+      index--; 
+      next = imagesCollection[index] || imagesCollection[imagesCollection.length - 1];
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
     nextImage() {
+      console.log("test");
       let activeImage = null;
       $("img.gallery-item").each(function() {
         if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
@@ -192,6 +193,7 @@
           index = i;
         }
       });
+      index++;
       next = imagesCollection[index] || imagesCollection[0];
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
@@ -236,11 +238,11 @@
       }
     },
     filterByTag() {
-      if ($(this).hasClass("active-tag")) {
+      if ($(this).hasClass("active active-tag")) {
         return;
       }
       $(".active-tag").removeClass("active active-tag");
-      $(this).addClass("active-tag");
+      $(this).addClass("active active-tag");
 
       var tag = $(this).data("images-toggle");
 

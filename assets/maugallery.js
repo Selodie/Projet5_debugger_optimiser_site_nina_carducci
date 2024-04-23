@@ -120,7 +120,6 @@
       $(`#${lightboxId}`).modal("toggle");
     },
     prevImage() {
-      console.log("test");
       let activeImage = null;
       $("img.gallery-item").each(function() {
         if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
@@ -159,7 +158,6 @@
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
     nextImage() {
-      console.log("test");
       let activeImage = null;
       $("img.gallery-item").each(function() {
         if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
